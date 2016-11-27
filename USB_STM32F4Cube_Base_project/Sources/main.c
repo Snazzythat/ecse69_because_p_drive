@@ -14,6 +14,7 @@
 #include <LED_thread.h>
 #include <mouse_thread.h>
 #include <cmsis_os.h>
+#include <TIM.h>
 #include <rl_usb.h>                     // Keil.MDK-Pro::USB:CORE
 
 
@@ -29,6 +30,7 @@ int main(void) {
 	
   //	Configure the system clock	//
   SystemClock_Config();
+	Tim4Init();
 	
 	USBD_Initialize(0);               /* USB Device 0 Initialization        */
   USBD_Connect(0); 

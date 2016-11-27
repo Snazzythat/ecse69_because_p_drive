@@ -44,7 +44,7 @@
 #include <main.h>
 #include <LED_thread.h>
 
-extern TIM_HandleTypeDef TIM3_handle;
+extern TIM_HandleTypeDef TIM4_handle;
 
 /** @addtogroup STM32F4xx_HAL_Examples
   * @{
@@ -150,8 +150,8 @@ void DebugMon_Handler(void)
 /*void PPP_IRQHandler(void)
 {
 }*/
-void TIM3_IRQHandler(void) {
-	HAL_TIM_IRQHandler(&TIM3_handle);
+void TIM4_IRQHandler(void) {
+	HAL_TIM_IRQHandler(&TIM4_handle);
 }
 
 /**
