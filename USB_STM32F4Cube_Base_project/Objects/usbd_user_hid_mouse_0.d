@@ -1,0 +1,12 @@
+.\objects\usbd_user_hid_mouse_0.o: Sources\USBD_User_HID_Mouse_0.c
+.\objects\usbd_user_hid_mouse_0.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\usbd_user_hid_mouse_0.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.1.0\USB\Include\rl_usb.h
+.\objects\usbd_user_hid_mouse_0.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\usbd_user_hid_mouse_0.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\usbd_user_hid_mouse_0.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\RTOS\RTX\INC\cmsis_os.h
+.\objects\usbd_user_hid_mouse_0.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\usbd_user_hid_mouse_0.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.1.0\USB\Include\usb_def.h
+.\objects\usbd_user_hid_mouse_0.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.1.0\USB\Include\usb_cdc.h
+.\objects\usbd_user_hid_mouse_0.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.1.0\USB\Include\usb_hid.h
+.\objects\usbd_user_hid_mouse_0.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.1.0\USB\Include\usb_msc.h
+.\objects\usbd_user_hid_mouse_0.o: .\Headers\mouse_thread.h
