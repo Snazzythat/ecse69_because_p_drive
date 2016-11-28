@@ -86,9 +86,15 @@
 .\objects\main.o: .\Headers\mouse_thread.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\RTOS\RTX\INC\cmsis_os.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\main.o: .\Headers\TIM.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.1.0\USB\Include\rl_usb.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.1.0\USB\Include\usb_def.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.1.0\USB\Include\usb_cdc.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.1.0\USB\Include\usb_hid.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.1.0\USB\Include\usb_msc.h
+.\objects\main.o: .\Headers\accelerometer_thread.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\objects\main.o: .\Headers\kalman_filter_funcs.h
+.\objects\main.o: .\Headers\keypad_thread.h
+.\objects\main.o: .\Headers\segment_display.h

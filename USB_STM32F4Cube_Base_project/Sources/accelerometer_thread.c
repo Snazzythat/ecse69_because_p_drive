@@ -16,6 +16,7 @@
 #include "keypad_thread.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <mouse_thread.h>
 
 //--------------------------------------------------------------------------------------Defines 
 // For calculating pitch/roll
@@ -138,14 +139,23 @@ void Thread_Accelerometer (void const *argument)
 		roll  = (180/PI) * atan((double) filtered[0] / tempSum1);
 		
 		//Normalize
-		roll  += 90;
-		pitch += 90;
+		//roll  += 90;
+		//pitch += 90;
 		
-		//MUTEX ACCESS TO SET ANGLE VALUE
-		if(selected_mode == ROLL_MODE)
-			SevenSegment_SetDisplayValue_Angle(roll);
-		else if(selected_mode == PITCH_MODE)
-			SevenSegment_SetDisplayValue_Angle(pitch);
+		roll  = roll * -8 / 45;
+		pitch = pitch * 8 / 45;
+		
+		set_roll_and_pitch_to_mouse(roll, pitch);
+		
+//		//MUTEX ACCESS TO SET ANGLE VALUE
+//		if(selected_mode == ROLL_MODE)
+//		{
+//			SevenSegment_SetDisplayValue_Angle(roll);
+//		}
+//		else if(selected_mode == PITCH_MODE)
+//		{
+//			SevenSegment_SetDisplayValue_Angle(pitch);
+//		}
 	}
 }
 //--------------------------------------------------------------------------------------THREAD STARTER

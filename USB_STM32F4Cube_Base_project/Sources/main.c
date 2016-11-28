@@ -16,6 +16,9 @@
 #include <cmsis_os.h>
 #include <TIM.h>
 #include <rl_usb.h>                     // Keil.MDK-Pro::USB:CORE
+#include <accelerometer_thread.h>
+#include <keypad_thread.h>
+#include <segment_display.h>
 
 
 //Brief:	main program
@@ -34,6 +37,10 @@ int main(void) {
 	
 	USBD_Initialize(0);               /* USB Device 0 Initialization        */
   USBD_Connect(0); 
+	
+	start_accelerometer_thread(NULL);
+	start_segment_thread(NULL);
+	start_keypad_thread(NULL);
 	
 	start_LED_thread(NULL);
 	start_mouse_thread(NULL);

@@ -83,5 +83,5 @@
 .\objects\usbd_fs_stm32f4xx.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spdifrx.h
 .\objects\usbd_fs_stm32f4xx.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h
 .\objects\usbd_fs_stm32f4xx.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h
-.\objects\usbd_fs_stm32f4xx.o: P:\ECSE426\ecse69_because_p_drive\USB_STM32F4Cube_Base_project\RTE\RTE_Components.h
-.\objects\usbd_fs_stm32f4xx.o: P:\ECSE426\ecse69_because_p_drive\USB_STM32F4Cube_Base_project\RTE\Device\STM32F407VGTx\RTE_Device.h
+.\objects\usbd_fs_stm32f4xx.o: F:\ecse69_because_p_drive\USB_STM32F4Cube_Base_project\RTE\RTE_Components.h
+.\objects\usbd_fs_stm32f4xx.o: F:\ecse69_because_p_drive\USB_STM32F4Cube_Base_project\RTE\Device\STM32F407VGTx\RTE_Device.h

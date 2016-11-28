@@ -9,10 +9,12 @@
 #include "stm32f4xx_hal_tim.h"
 #include "TIM.h"
 #include "LED_thread.h"
+#include "mouse_thread.h"
 #include "keypad_thread.h"
 
 int keypad_TIM_counter;
 int segment_TIM_counter;
+int mouse_TIM_counter;
 
 TIM_HandleTypeDef TIM3_handle;
 TIM_HandleTypeDef TIM4_handle;
@@ -59,13 +61,17 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			osSignalSet(segment_thread_ID, 0x0004);
 		}
 		
+		osSignalSet(mouse_thread_ID, 0x0069);
+		
 		// 100hz Keypad and temp ADC
 		if (keypad_TIM_counter++ == 100)
-		{
+		{			
 			osSignalSet(tid_Thread_ADCTemp, 0x0005);
 			osSignalSet(tid_Thread_Keypad, 0x0007);
-			osSignalSet(LED_thread_ID, 0x00000001);			
+			osSignalSet(LED_thread_ID, 0x00000001);
+			
 			keypad_TIM_counter = 0;
 		}
+
 	}
 }

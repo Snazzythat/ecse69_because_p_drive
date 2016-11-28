@@ -1,5 +1,5 @@
 .\objects\usbd_config_0.o: RTE\USB\USBD_Config_0.c
-.\objects\usbd_config_0.o: P:\ECSE426\ecse69_because_p_drive\USB_STM32F4Cube_Base_project\RTE\RTE_Components.h
+.\objects\usbd_config_0.o: F:\ecse69_because_p_drive\USB_STM32F4Cube_Base_project\RTE\RTE_Components.h
 .\objects\usbd_config_0.o: RTE\USB\USBD_Config_HID_0.h
 .\objects\usbd_config_0.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.1.0\USB\Include\usbd_config.h
 .\objects\usbd_config_0.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
