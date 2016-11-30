@@ -65,7 +65,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		
 		// 100hz Keypad and temp ADC
 		if (keypad_TIM_counter++ == 100)
-		{			
+		{
 			osSignalSet(tid_Thread_ADCTemp, 0x0005);
 			osSignalSet(tid_Thread_Keypad, 0x0007);
 			osSignalSet(LED_thread_ID, 0x00000001);

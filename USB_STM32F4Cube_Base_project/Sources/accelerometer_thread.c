@@ -108,6 +108,7 @@ void Thread_Accelerometer (void const *argument)
 	int DP_ARRAY[3];
 	double pitch;
 	double roll;
+	int mouse_X, mouse_Y;
 	
 	initKalman(0.001,0.1,&kalman1);
 	initKalman(0.001,0.1,&kalman2);
@@ -135,17 +136,17 @@ void Thread_Accelerometer (void const *argument)
 		// Converting 
 		double tempSum1 = sqrt(filtered[1] * filtered[1] + filtered[2] * filtered[2]);
 		double tempSum2 = sqrt(filtered[0] * filtered[0] + filtered[2] * filtered[2]);
-		pitch = (180/PI) * atan((double) filtered[1] / tempSum2);
-		roll  = (180/PI) * atan((double) filtered[0] / tempSum1);
+		pitch = (-180/PI) * atan((double) filtered[1] / tempSum2);
+		roll  = (-180/PI) * atan((double) filtered[0] / tempSum1);
 		
 		//Normalize
 		//roll  += 90;
 		//pitch += 90;
 		
-		roll  = roll * -8 / 45;
-		pitch = pitch * 8 / 45;
+		mouse_X  = roll * 8 / 45;
+		mouse_Y = pitch * 8 / 45;
 		
-		set_roll_and_pitch_to_mouse(roll, pitch);
+		set_roll_and_pitch_to_mouse(mouse_X, mouse_Y);
 		
 //		//MUTEX ACCESS TO SET ANGLE VALUE
 //		if(selected_mode == ROLL_MODE)

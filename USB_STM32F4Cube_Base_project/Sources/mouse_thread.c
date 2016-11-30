@@ -33,13 +33,25 @@ osMutexDef(mouse_mutex);
 void mouse_thread_periph_init(void) {
 	GPIO_InitTypeDef mouse_GPIO_struct;
 	
-	__HAL_RCC_GPIOA_CLK_ENABLE();
+	__HAL_RCC_GPIOC_CLK_ENABLE();
 
-	mouse_GPIO_struct.Pin		= GPIO_PIN_0;
+	mouse_GPIO_struct.Pin		= GPIO_PIN_6;
 	mouse_GPIO_struct.Mode	= GPIO_MODE_INPUT;
 	mouse_GPIO_struct.Pull	= GPIO_NOPULL;
 	mouse_GPIO_struct.Speed	= GPIO_SPEED_FREQ_MEDIUM;
-	HAL_GPIO_Init(GPIOA, &mouse_GPIO_struct);
+	HAL_GPIO_Init(GPIOC, &mouse_GPIO_struct);
+	
+	mouse_GPIO_struct.Pin		= GPIO_PIN_8;
+	mouse_GPIO_struct.Mode	= GPIO_MODE_INPUT;
+	mouse_GPIO_struct.Pull	= GPIO_NOPULL;
+	mouse_GPIO_struct.Speed	= GPIO_SPEED_FREQ_MEDIUM;
+	HAL_GPIO_Init(GPIOC, &mouse_GPIO_struct);
+	
+	mouse_GPIO_struct.Pin		= GPIO_PIN_9;
+	mouse_GPIO_struct.Mode	= GPIO_MODE_INPUT;
+	mouse_GPIO_struct.Pull	= GPIO_NOPULL;
+	mouse_GPIO_struct.Speed	= GPIO_SPEED_FREQ_MEDIUM;
+	HAL_GPIO_Init(GPIOC, &mouse_GPIO_struct);
 }
 
 //Brief:		Starts the mouse thread in the OS (from Inactive into the Lifecycle)
@@ -92,8 +104,8 @@ int get_pitch_from_accelerometer()
 //Return:		None
 void mouse_thread(void const *args) {
 	
-	int roll_to_report;
-	int pitch_to_report;
+	int mouse_X;
+	int mouse_Y;
 	
 	mouse_in_report[0] = 0;
 	mouse_in_report[1] = 0;
@@ -103,34 +115,36 @@ void mouse_thread(void const *args) {
 	mouse_thread_periph_init();
 	
 	while(1) {
-		
+		// wait for thread signal from TIM
 		osSignalWait(0x0069, osWaitForever);
 		
-	  roll_to_report =  get_roll_from_accelerometer();
-		pitch_to_report = get_pitch_from_accelerometer();
+		// get mouse relative X and Y
+	  mouse_X =  get_roll_from_accelerometer();
+		mouse_Y = get_pitch_from_accelerometer();
 		
-//		mouse_in_report[1] = roll_to_report;
-//		mouse_in_report[2] = pitch_to_report;
-		
-		if (roll_to_report < 0)
-			mouse_in_report[1] = (uint8_t)roll_to_report;
+		// assign X to report
+		if (mouse_X < 0)
+			mouse_in_report[1] = (uint8_t)mouse_X;
 		else
-			mouse_in_report[1] = roll_to_report;
-		
-		if (pitch_to_report < 0)
-			mouse_in_report[2] = (uint8_t)pitch_to_report;
+			mouse_in_report[1] = mouse_X;
+		// assign Y to report
+		if (mouse_Y < 0)
+			mouse_in_report[2] = (uint8_t)mouse_Y;
 		else
-			mouse_in_report[2] = pitch_to_report;
+			mouse_in_report[2] = mouse_Y;
 		
-		if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == SET)
+		// button pressed (LMB, RMB, SCROLL)
+		if(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_6) == SET)
 			mouse_in_report[0] = 0x01;
+		else if(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_8) == SET)
+			mouse_in_report[0] = 0x02;
+		else if(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_9) == SET)
+			mouse_in_report[0] = 0x04;
 		else
 			mouse_in_report[0] = 0x00;
-		USBD_HID_GetReportTrigger(0, 0, mouse_in_report, 4);
 		
-		mouse_in_report[1] = 0;
-		mouse_in_report[2] = 0;
-		
+		// send in the report
+		USBD_HID_GetReportTrigger(0, 0, mouse_in_report, 4);		
 	}
 }
 

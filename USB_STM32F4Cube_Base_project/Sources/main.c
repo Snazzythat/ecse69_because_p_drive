@@ -39,8 +39,8 @@ int main(void) {
   USBD_Connect(0); 
 	
 	start_accelerometer_thread(NULL);
-	start_segment_thread(NULL);
-	start_keypad_thread(NULL);
+	//start_segment_thread(NULL);
+	//start_keypad_thread(NULL);
 	
 	start_LED_thread(NULL);
 	start_mouse_thread(NULL);
