@@ -472,6 +472,21 @@
               <FileType>1</FileType>
               <FilePath>.\Sources\TIM.c</FilePath>
             </File>
+            <File>
+              <FileName>cc2500.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sources\cc2500.c</FilePath>
+            </File>
+            <File>
+              <FileName>transceiver_protocol.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sources\transceiver_protocol.c</FilePath>
+            </File>
+            <File>
+              <FileName>transceiver_thread.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sources\transceiver_thread.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

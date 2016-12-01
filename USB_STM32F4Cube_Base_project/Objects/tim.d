@@ -80,4 +80,7 @@
 .\objects\tim.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\tim.o: .\Headers\LED_thread.h
 .\objects\tim.o: .\Headers\mouse_thread.h
+.\objects\tim.o: .\Headers\transceiver_thread.h
+.\objects\tim.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\tim.o: .\Headers\keypad_thread.h
+.\objects\tim.o: .\Headers\transceiver_thread.h

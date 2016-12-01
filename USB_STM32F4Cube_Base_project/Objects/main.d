@@ -84,8 +84,11 @@
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\main.o: .\Headers\LED_thread.h
 .\objects\main.o: .\Headers\mouse_thread.h
+.\objects\main.o: .\Headers\transceiver_thread.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\RTOS\RTX\INC\cmsis_os.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\main.o: .\Headers\transceiver_thread.h
+.\objects\main.o: .\Headers\cc2500.h
 .\objects\main.o: .\Headers\TIM.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.1.0\USB\Include\rl_usb.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

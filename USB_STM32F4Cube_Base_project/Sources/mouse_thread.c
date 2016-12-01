@@ -37,19 +37,25 @@ void mouse_thread_periph_init(void) {
 
 	mouse_GPIO_struct.Pin		= GPIO_PIN_6;
 	mouse_GPIO_struct.Mode	= GPIO_MODE_INPUT;
-	mouse_GPIO_struct.Pull	= GPIO_NOPULL;
+	mouse_GPIO_struct.Pull	= GPIO_PULLDOWN;
 	mouse_GPIO_struct.Speed	= GPIO_SPEED_FREQ_MEDIUM;
 	HAL_GPIO_Init(GPIOC, &mouse_GPIO_struct);
 	
 	mouse_GPIO_struct.Pin		= GPIO_PIN_8;
 	mouse_GPIO_struct.Mode	= GPIO_MODE_INPUT;
-	mouse_GPIO_struct.Pull	= GPIO_NOPULL;
+	mouse_GPIO_struct.Pull	= GPIO_PULLDOWN;
 	mouse_GPIO_struct.Speed	= GPIO_SPEED_FREQ_MEDIUM;
 	HAL_GPIO_Init(GPIOC, &mouse_GPIO_struct);
 	
 	mouse_GPIO_struct.Pin		= GPIO_PIN_9;
 	mouse_GPIO_struct.Mode	= GPIO_MODE_INPUT;
-	mouse_GPIO_struct.Pull	= GPIO_NOPULL;
+	mouse_GPIO_struct.Pull	= GPIO_PULLDOWN;
+	mouse_GPIO_struct.Speed	= GPIO_SPEED_FREQ_MEDIUM;
+	HAL_GPIO_Init(GPIOC, &mouse_GPIO_struct);
+		
+	mouse_GPIO_struct.Pin		= GPIO_PIN_13;
+	mouse_GPIO_struct.Mode	= GPIO_MODE_INPUT;
+	mouse_GPIO_struct.Pull	= GPIO_PULLDOWN;
 	mouse_GPIO_struct.Speed	= GPIO_SPEED_FREQ_MEDIUM;
 	HAL_GPIO_Init(GPIOC, &mouse_GPIO_struct);
 }
@@ -138,13 +144,19 @@ void mouse_thread(void const *args) {
 			mouse_in_report[0] = 0x01;
 		else if(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_8) == SET)
 			mouse_in_report[0] = 0x02;
-		else if(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_9) == SET)
-			mouse_in_report[0] = 0x04;
 		else
 			mouse_in_report[0] = 0x00;
 		
-		// send in the report
-		USBD_HID_GetReportTrigger(0, 0, mouse_in_report, 4);		
+		// wheel scroll
+		if(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_9) == SET)
+			mouse_in_report[3] = 0x05;
+		else if(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13) == SET)
+			mouse_in_report[3] = (uint8_t)-0x05;
+		else
+			mouse_in_report[3] = 0x00;
+			
+		// send in the report to transceiver thread
+		set_report_array(mouse_in_report);		
 	}
 }
 

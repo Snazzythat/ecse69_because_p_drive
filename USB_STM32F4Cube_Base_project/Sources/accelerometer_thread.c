@@ -143,10 +143,11 @@ void Thread_Accelerometer (void const *argument)
 		//roll  += 90;
 		//pitch += 90;
 		
-		mouse_X  = roll * 8 / 45;
-		mouse_Y = pitch * 8 / 45;
+		mouse_X =  roll; //* -8 / 45;
+		mouse_Y = pitch; //* 8 / 45;
 		
-		set_roll_and_pitch_to_mouse(mouse_X, mouse_Y);
+		set_roll_and_pitch_to_mouse(abs(mouse_X) < 2 ? 0 : mouse_X < 0 ? mouse_X + 2 : mouse_X - 2,
+																abs(mouse_Y) < 2 ? 0 : mouse_Y < 0 ? mouse_Y + 2 : mouse_Y - 2);
 		
 //		//MUTEX ACCESS TO SET ANGLE VALUE
 //		if(selected_mode == ROLL_MODE)

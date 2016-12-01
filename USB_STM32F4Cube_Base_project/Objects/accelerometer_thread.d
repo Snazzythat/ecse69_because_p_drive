@@ -92,3 +92,4 @@
 .\objects\accelerometer_thread.o: .\Headers\keypad_thread.h
 .\objects\accelerometer_thread.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\accelerometer_thread.o: .\Headers\mouse_thread.h
+.\objects\accelerometer_thread.o: .\Headers\transceiver_thread.h

@@ -10,3 +10,5 @@
 .\objects\usbd_user_hid_mouse_0.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.1.0\USB\Include\usb_hid.h
 .\objects\usbd_user_hid_mouse_0.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.1.0\USB\Include\usb_msc.h
 .\objects\usbd_user_hid_mouse_0.o: .\Headers\mouse_thread.h
+.\objects\usbd_user_hid_mouse_0.o: .\Headers\transceiver_thread.h
+.\objects\usbd_user_hid_mouse_0.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

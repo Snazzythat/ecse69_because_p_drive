@@ -11,10 +11,12 @@
 #include "LED_thread.h"
 #include "mouse_thread.h"
 #include "keypad_thread.h"
+#include "transceiver_thread.h"
 
 int keypad_TIM_counter;
 int segment_TIM_counter;
 int mouse_TIM_counter;
+int transceiver_TIM_counter;
 
 TIM_HandleTypeDef TIM3_handle;
 TIM_HandleTypeDef TIM4_handle;
@@ -28,7 +30,7 @@ void Tim4Init()
 	// Clock frequency is 168MHz Period and prescaler are in the range
 	// Let Prescaler be 100 and the period be 840
 	TIM4_handle.Instance = TIM4;
-	TIM4_handle.Init.Prescaler					= 100;        
+	TIM4_handle.Init.Prescaler					= 50;        
 	TIM4_handle.Init.CounterMode				= TIM_COUNTERMODE_UP;     
 	TIM4_handle.Init.Period							= 840;           
 	TIM4_handle.Init.ClockDivision			= TIM_CLOCKDIVISION_DIV1;    
@@ -62,6 +64,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		}
 		
 		osSignalSet(mouse_thread_ID, 0x0069);
+		osSignalSet(transceiver_thread_ID, 0x07);
 		
 		// 100hz Keypad and temp ADC
 		if (keypad_TIM_counter++ == 100)
@@ -72,6 +75,5 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			
 			keypad_TIM_counter = 0;
 		}
-
 	}
 }

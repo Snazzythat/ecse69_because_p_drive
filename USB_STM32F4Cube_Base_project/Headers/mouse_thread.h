@@ -9,6 +9,7 @@
 #define _MOUSE_THREAD
 
 #include <stdint.h>
+#include <transceiver_thread.h>
 #include <cmsis_os.h>
 
 extern uint8_t  mouse_in_report[4];

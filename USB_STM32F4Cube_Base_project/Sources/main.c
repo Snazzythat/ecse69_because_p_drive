@@ -13,7 +13,9 @@
 #include <arm_math.h>
 #include <LED_thread.h>
 #include <mouse_thread.h>
+#include <transceiver_thread.h>
 #include <cmsis_os.h>
+#include <cc2500.h>
 #include <TIM.h>
 #include <rl_usb.h>                     // Keil.MDK-Pro::USB:CORE
 #include <accelerometer_thread.h>
@@ -31,6 +33,10 @@ int main(void) {
 	osKernelInitialize();  
   HAL_Init();
 	
+	// initialize cc2500
+	CC2500_Init();
+	CC2500_Reset();
+	
   //	Configure the system clock	//
   SystemClock_Config();
 	Tim4Init();
@@ -41,9 +47,11 @@ int main(void) {
 	start_accelerometer_thread(NULL);
 	//start_segment_thread(NULL);
 	//start_keypad_thread(NULL);
-	
+	start_transceiver_thread(NULL);
 	start_LED_thread(NULL);
 	start_mouse_thread(NULL);
+	
+	
 	
 	osKernelStart();
 	osDelay(osWaitForever);

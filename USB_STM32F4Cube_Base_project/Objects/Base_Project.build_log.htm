@@ -22,63 +22,40 @@ Dialog DLL:      TCM.DLL V1.14.5.0
  
 <h2>Project:</h2>
 F:\ecse69_because_p_drive\USB_STM32F4Cube_Base_project\Base_Project.uvprojx
-Project File Date:  11/29/2016
+Project File Date:  11/30/2016
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.05 update 2 (build 169)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Application'
-compiling accelerometer_thread.c...
+compiling transceiver_protocol.c...
 C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h(71): warning:  #47-D: incompatible redefinition of macro "__FPU_PRESENT"
   #define __FPU_PRESENT             1U       /*!< FPU present                                   */
-.\Headers\accelerometer_thread.h(28): warning:  #1-D: last line of file ends without a newline
-  #endif
-.\Headers\TIM.h(24): warning:  #1295-D: Deprecated declaration Tim4Init - give arg types
-  extern void Tim4Init();       
-.\Headers\segment_display.h(33): warning:  #1295-D: Deprecated declaration seven_segment_init - give arg types
-  void seven_segment_init();
-.\Headers\segment_display.h(39): warning:  #1295-D: Deprecated declaration start_segment_thread - give arg types
-  void start_segment_thread();
-.\Headers\keypad_thread.h(43): warning:  #1295-D: Deprecated declaration init_num_pad - give arg types
-  void init_num_pad();
-.\Headers\keypad_thread.h(46): warning:  #1295-D: Deprecated declaration get_num_pad_value - give arg types
-  int get_num_pad_value();
-.\Headers\keypad_thread.h(59): warning:  #1-D: last line of file ends without a newline
-  #endif
-.\Headers\mouse_thread.h(24): warning:  #1295-D: Deprecated declaration get_roll_from_accelerometer - give arg types
-  int get_roll_from_accelerometer();
-.\Headers\mouse_thread.h(27): warning:  #1295-D: Deprecated declaration get_pitch_from_accelerometer - give arg types
-  int get_pitch_from_accelerometer();
-Sources\accelerometer_thread.c(24): warning:  #47-D: incompatible redefinition of macro "PI" (declared at line 334 of "C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\arm_math.h")
-  #define PI            3.14159265358979323846 
-Sources\accelerometer_thread.c(128): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-                float Z_accel_pre = result[2] + 
-_OFFSET;
-Sources\accelerometer_thread.c(108): warning:  #177-D: variable "DP_ARRAY" was declared but never referenced
-        int DP_ARRAY[3];
-Sources\accelerometer_thread.c(187): warning:  #1-D: last line of file ends without a newline
-  }
-Sources\accelerometer_thread.c: 14 warnings, 0 errors
+Sources\transceiver_protocol.c(23): warning:  #177-D: function "transmit_ack" was declared but never referenced
+  static void transmit_ack(void)
+Sources\transceiver_protocol.c(38): warning:  #177-D: function "transmit_comfirm" was declared but never referenced
+  static int transmit_comfirm(uint8_t hex)
+Sources\transceiver_protocol.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=36128 RO-data=1568 RW-data=588 ZI-data=11132  
-".\Objects\Base_Project.axf" - 0 Error(s), 14 Warning(s).
+Program Size: Code=37888 RO-data=1592 RW-data=688 ZI-data=11232  
+".\Objects\Base_Project.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
                 http://www.keil.com/pack/ARM.CMSIS.5.0.0-Beta4.pack
-                ::CMSIS:RTOS:1.0 (API)
+                ::CMSIS Driver:USB Device:2.01 (API)
                 CMSIS (Cortex Microcontroller Software Interface Standard)
-   * Component: RTOS Version: 1.0
    * Component: USB Device Version: 2.01
    * Component: CORE Version: 5.0.0
+   * Component: RTOS Version: 1.0
+   * Component: Keil RTX Version: 4.81.0
+   * Component: DSP Version: 1.4.6
 
 Package Vendor: Keil
                 http://www.keil.com/pack/Keil.ARM_Compiler.1.1.1.pack
                 Keil::Compiler:I/O:STDOUT:ITM:1.1.0
                 Keil ARM Compiler extensions
    * Component: STDOUT Variant: ITM Version: 1.1.0
-   * Component: DSP Version: 1.4.6
-   * Component: Keil RTX Version: 4.81.0
 
 Package Vendor: Keil
                 http://www.keil.com/pack/Keil.MDK-Middleware.7.1.0.pack
@@ -90,25 +67,25 @@ Package Vendor: Keil
 
 Package Vendor: Keil
                 http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.9.0.pack
-                ::Device:STM32Cube Framework:1.0.0 (API)
+                Keil::Device:STM32Cube Framework:Classic:1.5.0
                 STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
-   * Component: STM32Cube Framework Version: 1.0.0
-   * Component: Startup Version: 2.5.0
-   * Component: ADC Version: 1.5.0
    * Component: Classic Version: 1.5.0
    * Component: Common Version: 1.5.0
-   * Component: Full-speed Version: 2.15
-   * Component: USART Version: 1.5.0
-   * Component: Cortex Version: 1.5.0
    * Component: DMA Version: 1.5.0
-   * Component: PWR Version: 1.5.0
-   * Component: RTC Version: 1.5.0
+   * Component: ADC Version: 1.5.0
+   * Component: Cortex Version: 1.5.0
+   * Component: STM32Cube Framework Version: 1.0.0
+   * Component: Startup Version: 2.5.0
    * Component: GPIO Version: 1.5.0
    * Component: RCC Version: 1.5.0
-   * Component: SRAM Version: 1.5.0
+   * Component: SPI Version: 1.5.0
    * Component: TIM Version: 1.5.0
    * Component: UART Version: 1.5.0
-   * Component: SPI Version: 1.5.0
+   * Component: RTC Version: 1.5.0
+   * Component: PWR Version: 1.5.0
+   * Component: SRAM Version: 1.5.0
+   * Component: USART Version: 1.5.0
+   * Component: Full-speed Version: 2.15
 
 <h2>Collection of Component include folders:</h2>
   F:\ecse69_because_p_drive\USB_STM32F4Cube_Base_project\RTE
@@ -122,34 +99,34 @@ Package Vendor: Keil
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ::CMSIS:RTOS:1.0 (API)
-
    * Component: ::CMSIS Driver:USB Device:2.01 (API)
       Include file:  CMSIS\Driver\Include\Driver_USBD.h
 
    * Component: ARM::CMSIS:CORE:5.0.0
 
-   * Component: Keil::Compiler:I/O:STDOUT:ITM:1.1.0
-      Source file:   Source\retarget_io.c
+   * Component: ::CMSIS:RTOS:1.0 (API)
+
+   * Component: ARM::CMSIS:RTOS:Keil RTX:4.81.0
+      Include file:  CMSIS\RTOS\RTX\UserCodeTemplates\osObjects.h
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MailQueue.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MemPool.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Mutex.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MsgQueue.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Timer.c
+      Source file:   CMSIS\RTOS\RTX\Templates\RTX_Conf_CM.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\main.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Thread.c
+      Source file:   CMSIS\RTOS\RTX\SRC\ARM\SVC_Table.s
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Semaphore.c
+      Library file:  CMSIS\RTOS\RTX\LIB\ARM\RTX_CM4.lib
+      Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
 
    * Component: ARM::CMSIS:DSP:1.4.6
       Library file:  CMSIS\Lib\ARM\arm_cortexM4lf_math.lib
       Include file:  CMSIS\Include\arm_math.h
 
-   * Component: ARM::CMSIS:RTOS:Keil RTX:4.81.0
-      Source file:   CMSIS\RTOS\RTX\Templates\RTX_Conf_CM.c
-      Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
-      Include file:  CMSIS\RTOS\RTX\UserCodeTemplates\osObjects.h
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\main.c
-      Library file:  CMSIS\RTOS\RTX\LIB\ARM\RTX_CM4.lib
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Timer.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MemPool.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Semaphore.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Thread.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MailQueue.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MsgQueue.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Mutex.c
-      Source file:   CMSIS\RTOS\RTX\SRC\ARM\SVC_Table.s
+   * Component: Keil::Compiler:I/O:STDOUT:ITM:1.1.0
+      Source file:   Source\retarget_io.c
 
    * Component: Keil.MDK-Pro::USB:CORE:6.7.0
       Include file:  USB\Include\rl_usb.h
@@ -161,68 +138,52 @@ Package Vendor: Keil
       Source file:   USB\Template\USBD_User_HID_Mouse.c
 
    * Component: Keil.MDK-Pro::USB:Device:6.7.0
-      Source file:   USB\Config\USBD_Config.c
       Source file:   USB\Template\USBD_User_Device_SerNum.c
+      Source file:   USB\Config\USBD_Config.c
       Source file:   USB\Template\USBD_User_Device.c
 
-   * Component: ::Device:STM32Cube Framework:1.0.0 (API)
+   * Component: Keil::Device:STM32Cube Framework:Classic:1.5.0
+      Include file:  MDK\Templates\Inc\stm32f4xx_hal_conf.h
+      Source file:   MDK\Templates\Src\stm32f4xx_it.c
+      Include file:  CMSIS\Driver\Config\RTE_Device.h
+      Include file:  MDK\Templates\Inc\main.h
+      Source file:   MDK\Templates\Src\stm32f4xx_hal_msp.c
+      Include file:  MDK\Templates\Inc\stm32f4xx_it.h
+      Source file:   MDK\Templates\Src\main.c
 
-   * Component: Keil::Device:Startup:2.5.0
-      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
-      Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
-      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s
-      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
-      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+   * Component: Keil::Device:STM32Cube HAL:Common:1.5.0
+      Include file:  Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
+
+   * Component: Keil::Device:STM32Cube HAL:DMA:1.5.0
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c
 
    * Component: Keil::Device:STM32Cube HAL:ADC:1.5.0
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc_ex.c
 
-   * Component: Keil::Device:STM32Cube Framework:Classic:1.5.0
-      Include file:  MDK\Templates\Inc\stm32f4xx_it.h
-      Include file:  CMSIS\Driver\Config\RTE_Device.h
-      Include file:  MDK\Templates\Inc\stm32f4xx_hal_conf.h
-      Include file:  MDK\Templates\Inc\main.h
-      Source file:   MDK\Templates\Src\stm32f4xx_it.c
-      Source file:   MDK\Templates\Src\main.c
-      Source file:   MDK\Templates\Src\stm32f4xx_hal_msp.c
-
-   * Component: Keil::Device:STM32Cube HAL:Common:1.5.0
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
-      Include file:  Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
-
-   * Component: Keil::CMSIS Driver:USB Device:Full-speed:2.15
-      Source file:   CMSIS\Driver\USBD_FS_STM32F4xx.c
-      Source file:   CMSIS\Driver\OTG_FS_STM32F4xx.c
-
-   * Component: Keil::Device:STM32Cube HAL:USART:1.5.0
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_usart.c
-
    * Component: Keil::Device:STM32Cube HAL:Cortex:1.5.0
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
 
-   * Component: Keil::Device:STM32Cube HAL:DMA:1.5.0
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c
+   * Component: ::Device:STM32Cube Framework:1.0.0 (API)
 
-   * Component: Keil::Device:STM32Cube HAL:PWR:1.5.0
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
-
-   * Component: Keil::Device:STM32Cube HAL:RTC:1.5.0
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc.c
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc_ex.c
+   * Component: Keil::Device:Startup:2.5.0
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+      Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
 
    * Component: Keil::Device:STM32Cube HAL:GPIO:1.5.0
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c
 
    * Component: Keil::Device:STM32Cube HAL:RCC:1.5.0
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
 
-   * Component: Keil::Device:STM32Cube HAL:SRAM:1.5.0
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_sram.c
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_fsmc.c
+   * Component: Keil::Device:STM32Cube HAL:SPI:1.5.0
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c
 
    * Component: Keil::Device:STM32Cube HAL:TIM:1.5.0
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c
@@ -231,8 +192,24 @@ Package Vendor: Keil
    * Component: Keil::Device:STM32Cube HAL:UART:1.5.0
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c
 
-   * Component: Keil::Device:STM32Cube HAL:SPI:1.5.0
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c
+   * Component: Keil::Device:STM32Cube HAL:RTC:1.5.0
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:PWR:1.5.0
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
+
+   * Component: Keil::Device:STM32Cube HAL:SRAM:1.5.0
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_fsmc.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_sram.c
+
+   * Component: Keil::Device:STM32Cube HAL:USART:1.5.0
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_usart.c
+
+   * Component: Keil::CMSIS Driver:USB Device:Full-speed:2.15
+      Source file:   CMSIS\Driver\OTG_FS_STM32F4xx.c
+      Source file:   CMSIS\Driver\USBD_FS_STM32F4xx.c
 </pre>
 </body>
 </html>

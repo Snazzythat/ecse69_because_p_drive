@@ -1,6 +1,9 @@
 .\objects\mouse_thread.o: Sources\mouse_thread.c
 .\objects\mouse_thread.o: .\Headers\mouse_thread.h
 .\objects\mouse_thread.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\mouse_thread.o: .\Headers\transceiver_thread.h
+.\objects\mouse_thread.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\mouse_thread.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\mouse_thread.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\RTOS\RTX\INC\cmsis_os.h
 .\objects\mouse_thread.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\mouse_thread.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
@@ -17,7 +20,6 @@
 .\objects\mouse_thread.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 .\objects\mouse_thread.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 .\objects\mouse_thread.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-.\objects\mouse_thread.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\mouse_thread.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
 .\objects\mouse_thread.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h
 .\objects\mouse_thread.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h
