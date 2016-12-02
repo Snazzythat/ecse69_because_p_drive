@@ -30,9 +30,9 @@ void Tim4Init()
 	// Clock frequency is 168MHz Period and prescaler are in the range
 	// Let Prescaler be 100 and the period be 840
 	TIM4_handle.Instance = TIM4;
-	TIM4_handle.Init.Prescaler					= 50;        
+	TIM4_handle.Init.Prescaler					= 8400;        
 	TIM4_handle.Init.CounterMode				= TIM_COUNTERMODE_UP;     
-	TIM4_handle.Init.Period							= 840;           
+	TIM4_handle.Init.Period							= 50;           
 	TIM4_handle.Init.ClockDivision			= TIM_CLOCKDIVISION_DIV1;    
 	
 	HAL_TIM_Base_Init(&TIM4_handle);
